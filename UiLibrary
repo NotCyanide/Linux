@@ -68,7 +68,7 @@ local library = {
 	function library:CreateWatermark(name)
 		local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
 		local watermark = { }
-		watermark.Visible = true
+		watermark.Visible = false
 		watermark.text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
 		watermark.main = Instance.new("ScreenGui", coregui)
 		watermark.main.Name = "Watermark"
@@ -223,7 +223,7 @@ local library = {
 	function library:CreateWindow(name, hidebutton)
 		local window = { }
 		window.name = name or ""
-		window.size = UDim2.fromOffset(492, 450)
+		window.size = UDim2.fromOffset(492, 500)
 		window.hidebutton = hidebutton or Enum.KeyCode.RightControl
 		window.theme = library.theme
 		local updateevent = Instance.new("BindableEvent")
